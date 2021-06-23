@@ -1,0 +1,117 @@
+body{
+    background: url(/admin/images/covid-bg.jpg);
+    background-size: cover;
+    overflow: hidden;
+    margin: 0!important;
+}
+.hero-wrapper{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+}
+.left-inner {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    background: rgb(0 0 0 / 70%);
+    margin: 0!important;
+}
+.left-inner__wrapper {
+    margin: 15px auto;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+p.left-text, h2.left-header {
+    margin: 5px!important;
+}
+h2.left-header{
+    color: #ff9462;
+}
+p.left-text{
+    color: #fff;
+    font-weight: 500;
+}
+.bottom-inner__wrapper {
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   #FORM
+   ========================================================================== */
+  
+.input-group {
+    margin: 2.5rem auto;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input--style-1 {
+    padding: 15px 30px;
+    background: transparent;
+    width: 315px;
+    color: #fff;
+    font-size: 16px;
+    border-bottom: 1px solid #ffffff40;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: #ffffff40!important;
+}
+input:focus, button:focus{
+    outline: none;
+    outline-offset: none;
+}
+
+.p-t-20 {
+    margin: 3rem auto 0;
+    text-align: center;
+}
+
+button.btn.btn--radius.btn--logo-color {
+    padding: 15px 40px;
+    font-size: 16px;
+    background: #fff;
+    border: none;
+}
+
+button.btn.btn--radius.btn--logo-color:hover{
+    background: #f59770;
+}
+
+.input--style-1::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #555;
+}
+  
+.input--style-1:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #555;
+    opacity: 1;
+}
+  
+.input--style-1::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #555;
+    opacity: 1;
+}
+  
+.input--style-1:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #555;
+}
+  
+.input--style-1:-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #555;
+}
+  
