@@ -367,12 +367,18 @@ if(isset($_POST['submit']))
     </section><!-- End Resume Section -->
 
     <!-- ======= Portfolio Section ======= -->
+
+    <?php
+  $mainPortDesc = $mainPlug->fetchMainPortfolioDesc();
+  $portResult = $mainPlug->fetchPortfolio();
+
+    ?>
     <section id="portfolio" class="portfolio section-bg">
       <div class="container">
 
         <div class="section-title">
           <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p><?php echo $mainPortDesc['description']; ?></p>
         </div>
 
         <div class="row" data-aos="fade-up">
@@ -388,17 +394,25 @@ if(isset($_POST['submit']))
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
+        <?php
+          while($portfolio = mysqli_fetch_assoc($portResult))
+          {
+          ?>
           <div class="col-lg-4 col-md-6 portfolio-item app">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <img src="<?php echo $portfolio['image2']; ?>" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="<?php echo $portfolio['image1']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $portfolio['portfolio-title']; ?>"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item web">
+          <?php
+         }
+          ?>
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
@@ -476,7 +490,7 @@ if(isset($_POST['submit']))
                 <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
 

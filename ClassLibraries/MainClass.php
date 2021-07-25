@@ -76,6 +76,19 @@ class mainClass extends DataBase{
         return $result;
     }
 
+    function fetchMainPortfolioDesc(){
+        $myQuery = "SELECT * FROM portfolio_desc WHERE id = 1";
+        $result = mysqli_query($this->dbh, $myQuery);
+        $row = mysqli_fetch_assoc($result);
+        return $row;
+    }
+
+    function fetchPortfolio(){
+        $myQuery = "SELECT * FROM portfolio";
+        $result = mysqli_query($this->dbh, $myQuery);
+        return $result;
+    }
+
     function saveInput($inputData, $code)
     {
 
