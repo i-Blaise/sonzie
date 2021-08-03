@@ -89,6 +89,35 @@ class mainClass extends DataBase{
         return $result;
     }
 
+    function fetchServiceDetails1(){
+        $num = ceil($this->countSkills()/2);
+        $myQuery = "SELECT * FROM services ORDER BY id ASC LIMIT $num";
+        $result = mysqli_query($this->dbh, $myQuery);
+        return $result;
+    }
+
+    function fetchServiceDetails2(){
+        $num = floor($this->countSkills()/2);
+        $myQuery = "SELECT * FROM services ORDER BY id DESC LIMIT $num";
+        $result = mysqli_query($this->dbh, $myQuery);
+        return $result;
+    }
+
+    function fetchServiceDesc(){
+        $myQuery = "SELECT * FROM services_desc WHERE id = 1";
+        $result = mysqli_query($this->dbh, $myQuery);
+        $row = mysqli_fetch_assoc($result);
+        return $row;
+    }
+
+    function fetchContact(){
+        $myQuery = "SELECT * FROM contact";
+        $result = mysqli_query($this->dbh, $myQuery);
+        $row = mysqli_fetch_assoc($result);
+        return $row;
+    }
+
+
     function saveInput($inputData, $code)
     {
 

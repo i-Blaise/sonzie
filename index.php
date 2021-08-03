@@ -46,6 +46,7 @@ if(isset($_POST['submit']))
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -498,45 +499,54 @@ if(isset($_POST['submit']))
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Services Section ======= -->
+
+    <?php
+  $service_desc = $mainPlug->fetchServiceDesc();
+  $service_result1 = $mainPlug->fetchServiceDetails1();
+  $service_result2 = $mainPlug->fetchServiceDetails2();
+
+    ?>
     <section id="services" class="services">
       <div class="container">
 
         <div class="section-title">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p><?php echo $service_desc['description']; ?></p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-clipboard-data"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+
+        <?php
+        $delay1 = 0;
+          while($service_details1 = mysqli_fetch_assoc($service_result1))
+        {
+          $delay1 += 100;
+        ?>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="<?php echo $delay1; ?>">
+            <div class="icon"><i class="<?php echo $service_details1['icon_code']; ?>" aria-hidden="true"></i></div>
+            <h4 class="title"><a href=""><?php echo $service_details1['service-name']; ?></a></h4>
+            <p class="description"><?php echo $service_details1['service-desc']; ?></p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+        <?php
+        }
+        ?>
+
+      <?php
+        $delay2 = 400;
+          while($service_details2 = mysqli_fetch_assoc($service_result2))
+        {
+          $delay2 += 100;
+        ?>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="<?php echo $delay2; ?>">
+            <div class="icon"><i class="<?php echo $service_details2['icon_code']; ?>" aria-hidden="true"></i></div>
+            <h4 class="title"><a href=""><?php echo $service_details2['service-name']; ?></a></h4>
+            <p class="description"><?php echo $service_details2['service-desc']; ?></p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bi bi-binoculars"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bi bi-brightness-high"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-          </div>
+        <?php
+        }
+        ?>
+
+        
         </div>
 
       </div>
@@ -544,6 +554,10 @@ if(isset($_POST['submit']))
     
 
     <!-- ======= Contact Section ======= -->
+
+    <?php
+  $contact = $mainPlug->fetchContact();
+    ?>
     <section id="contact" class="contact">
       <div class="container">
 
@@ -559,19 +573,19 @@ if(isset($_POST['submit']))
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p><?php echo $contact['location']; ?></p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p><?php echo $contact['email']; ?></p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p><?php echo $contact['phone']; ?></p>
               </div>
 
               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
