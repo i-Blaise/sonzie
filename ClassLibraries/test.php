@@ -1,26 +1,31 @@
 <?php
 
-// require_once('MainClass.php');
-require_once('AdminClass.php');
-// $testDBcon = new mainClass();
-$testDBcon = new adminClass();
+require_once('MainClass.php');
+// require_once('AdminClass.php');
+$testDBcon = new mainClass();
+// $testDBcon = new adminClass();
 
 
 
 
 // $result = $testDBcon->fetchInput('HDP22385746');
-$result = $testDBcon->adminLogin('mega_mhie', '0c867dafe9250d5b5e07ecd18e94f78f');
+// $result = $testDBcon->adminLogin('mega_mhie', '0c867dafe9250d5b5e07ecd18e94f78f');
 
-// var_dump($result);
-// print_r($result['birthday']);
+
+$portResult = $testDBcon->fetchPortfolio();
+
+
+
+// print_r($portResult);
+print_r($portResult['image2']);
 // print_r($result['description']);
 // echo $result['name'];
-if(isset($result['name']))
-{
-    echo $result['name'];
-}else{
-    echo 'yawa';
-}
+// if(isset($result['name']))
+// {
+//     echo $result['name'];
+// }else{
+//     echo 'yawa';
+// }
 // $d = 0;
 // while($skill_details = mysqli_fetch_assoc($result))
 // {
