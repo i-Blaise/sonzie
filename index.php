@@ -2,6 +2,10 @@
 require_once('ClassLibraries/MainClass.php');
 $mainPlug = new mainClass();
 
+// $about = $mainPlug->aboutMe();
+// echo $about['birthday'];
+// die();
+
 if(isset($_POST['submit']))
 {
    if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message']))
@@ -372,6 +376,7 @@ if(isset($_POST['submit']))
   $mainPortDesc = $mainPlug->fetchMainPortfolioDesc();
   $portResult = $mainPlug->fetchPortfolio();
 
+
     ?>
     <section id="portfolio" class="portfolio section-bg">
       <div class="container">
@@ -397,13 +402,14 @@ if(isset($_POST['submit']))
         <?php
           while($portfolio = mysqli_fetch_assoc($portResult))
           {
+            $id = $portResult['id'];
           ?>
           <div class="col-lg-4 col-md-6 portfolio-item app">
             <div class="portfolio-wrap">
               <img src="<?php echo $portfolio['image2']; ?>" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="<?php echo $portfolio['image2']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $portfolio['portfolio-title']; ?>"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <a href="portfolio-details.php?ID=".$id title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>

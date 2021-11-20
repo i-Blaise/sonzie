@@ -17,7 +17,7 @@ $portResult = $testDBcon->fetchPortfolio();
 
 
 // print_r($portResult);
-print_r($portResult['image2']);
+// print_r($portResult['image2']);
 // print_r($result['description']);
 // echo $result['name'];
 // if(isset($result['name']))
@@ -36,7 +36,7 @@ print_r($portResult['image2']);
 // $row = mysqli_fetch_array($result);
 
 // echo $row['name'];
-// echo $result->name;
+echo $portResult->id;
 
 
 // for image dimensions when posting it
