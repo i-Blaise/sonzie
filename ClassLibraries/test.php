@@ -1,23 +1,21 @@
 <?php
 
-require_once('MainClass.php');
-// require_once('AdminClass.php');
-$testDBcon = new mainClass();
-// $testDBcon = new adminClass();
+// require_once('MainClass.php');
+require_once('AdminClass.php');
+require_once('PortfolioClass.php');
+// $testDBcon = new mainClass();
+$testDBcon = new adminClass();
+$portfolioPlug = new portfolioClass();
 
 
 
 
 // $result = $testDBcon->fetchInput('HDP22385746');
 // $result = $testDBcon->adminLogin('mega_mhie', '0c867dafe9250d5b5e07ecd18e94f78f');
+$result = $portfolioPlug->fetchPortfolioDetail(1);
 
-
-$portResult = $testDBcon->fetchPortfolio();
-
-
-
-// print_r($portResult);
-// print_r($portResult['image2']);
+// var_dump($result);
+print_r($result['id']);
 // print_r($result['description']);
 // echo $result['name'];
 // if(isset($result['name']))
@@ -36,7 +34,7 @@ $portResult = $testDBcon->fetchPortfolio();
 // $row = mysqli_fetch_array($result);
 
 // echo $row['name'];
-echo $portResult->id;
+// echo $result->name;
 
 
 // for image dimensions when posting it
