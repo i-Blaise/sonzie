@@ -395,9 +395,9 @@ if(isset($_POST['submit']))
           ?>
           <div class="col-lg-4 col-md-6 portfolio-item app">
             <div class="portfolio-wrap">
-              <img src="<?php echo $portfolio['image2']; ?>" class="img-fluid" alt="">
+              <img src="<?php echo $portfolio['image1']; ?>" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="<?php echo $portfolio['image1']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $portfolio['portfolio-title']; ?>"><i class="bx bx-plus"></i></a>
+                <a href="<?php echo $portfolio['image2']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $portfolio['portfolio-title']; ?>"><i class="bx bx-plus"></i></a>
                 <a href="<?php echo $url; ?>" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
@@ -582,7 +582,11 @@ if(isset($_POST['submit']))
                 <p><?php echo $contact['phone']; ?></p>
               </div>
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe> -->
+          <div class="col-lg-8" data-aos="fade-right">
+            <img src="assets/img/contacts.jpg" class="img-fluid" alt="" height="100px">
+          </div>
+                
             </div>
 
           </div>

@@ -131,7 +131,7 @@ if(isset($_GET['id']))
               <h3>Project information</h3>
               <ul>
                 <li><strong>Category</strong>: <?php echo $portDetail['portfolio-category']; ?></li>
-                <li><strong>Client</strong>: <?php echo $portDetail['portfolio-client']; ?></li>
+                <li><strong>Client</strong>: <a href="<?php echo $portDetail['portfolio-client-url']; ?>"> <?php echo $portDetail['portfolio-client']; ?></a></li>
                 <li><strong>Project date</strong>: <?php echo $portDetail['portfolio-date-month']; ?> <?php echo $portDetail['portfolio-date-day']; ?>, <?php echo $portDetail['portfolio-date-year']; ?></li>
                 <li><strong>Project URL</strong>: <a href="<?php echo $portDetail['portfolio-url']; ?>"><?php echo $portDetail['portfolio-url-name']; ?></a></li>
               </ul>
